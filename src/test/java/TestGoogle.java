@@ -49,7 +49,7 @@ public class TestGoogle {
         System.setProperty("webdriver.gecko.driver", "C:\\Users\\evgeniy.rudenko\\Downloads\\geckodriver-v0.24.0-win64\\geckodriver.exe");
         driver = new FirefoxDriver();
 
-        driver.navigate().to("http://www.google.com");
+        driver.get("http://www.google.com");
 
         // Find the text input element by its name
         WebElement element = driver.findElement(By.name("q"));
