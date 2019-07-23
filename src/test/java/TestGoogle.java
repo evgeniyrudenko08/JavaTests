@@ -30,7 +30,7 @@ public class TestGoogle {
             driver = new ChromeDriver();
 
             driver.navigate().to("http://www.google.com");
-            WebElement element = driver.findElement(By.name("q"));
+            WebElement element  = driver.findElement(By.name("q"));
             element.sendKeys("Cheese!");
             element.submit();
             System.out.println("Page title is: " + driver.getTitle());
