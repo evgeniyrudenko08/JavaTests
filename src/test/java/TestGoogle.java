@@ -25,6 +25,7 @@ public class TestGoogle {
     @Test
     private void FindCheeseInGoogle() {
 
+
             System.setProperty("webdriver.chrome.driver", "C:\\Users\\evgeniy.rudenko\\Downloads\\chromedriver_win32\\chromedriver.exe");
             logs.logger.info("Start driver");
             driver = new ChromeDriver();
