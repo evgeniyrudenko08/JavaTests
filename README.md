@@ -1,3 +1,3 @@
 # JavaTests
 test
-yyyyyuuuu333
+yyyyyuuuu
