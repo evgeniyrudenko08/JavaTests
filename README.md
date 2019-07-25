@@ -1,1 +1,2 @@
 # JavaTests
+test
