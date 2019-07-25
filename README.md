@@ -1,2 +1,2 @@
 # JavaTests
-yyyyyy
+test
