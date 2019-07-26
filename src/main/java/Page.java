@@ -16,8 +16,7 @@ public class Page {
     {
         try
         {
-
-       return pageClass.getDeclaredConstructor(WebDriver.class, WebDriverWait.class).newInstance(this.driver, this.wait);
+            return pageClass.getDeclaredConstructor(WebDriver.class, WebDriverWait.class).newInstance(this.driver, this.wait);
         }
         catch (Exception e)
         {
