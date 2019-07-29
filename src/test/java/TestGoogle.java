@@ -1,3 +1,4 @@
+import Core.Logging;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,13 +33,13 @@ public class TestGoogle {
             WebElement element  = driver.findElement(By.name("q"));
             element.sendKeys("Cheese!");
             element.submit();
-            System.out.println("Page title is: " + driver.getTitle());
+            System.out.println("Pages.Page title is: " + driver.getTitle());
             (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
                 public Boolean apply(WebDriver d) {
                     return d.getTitle().toLowerCase().startsWith("cheese!");
                 }
             });
-            System.out.println("Page title is: " + driver.getTitle());
+            System.out.println("Pages.Page title is: " + driver.getTitle());
             logs.logger.info("Finish test");
             Assert.assertEquals(driver.getTitle(), "Cheese! - Пошук Google");
     }
@@ -60,7 +61,7 @@ public class TestGoogle {
         element.submit();
 
         // Check the title of the page
-        System.out.println("Page title is: " + driver.getTitle());
+        System.out.println("Pages.Page title is: " + driver.getTitle());
 
         // Google's search is rendered dynamically with JavaScript.
         // Wait for the page to load, timeout after 10 seconds
@@ -71,7 +72,7 @@ public class TestGoogle {
         });
 
         // Should see: "cheese! - Google Search"
-        System.out.println("Page title is: " + driver.getTitle());
+        System.out.println("Pages.Page title is: " + driver.getTitle());
         Assert.assertEquals(driver.getTitle(), "Cheese! - Пошук Google");
     }
 
