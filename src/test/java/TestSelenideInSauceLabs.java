@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class TestSelenide extends BaseUITest {
+public class TestSelenideInSauceLabs extends BaseUITest {
 
     @Test
     public void FindCheeseInGoogle(){
