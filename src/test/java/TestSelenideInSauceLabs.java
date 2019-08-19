@@ -1,4 +1,4 @@
-import Core.BaseUITest;
+import Core.BaseUITestInSauceLabs;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class TestSelenideInSauceLabs extends BaseUITest {
+public class TestSelenideInSauceLabs extends BaseUITestInSauceLabs {
 
     @Test
     public void FindCheeseInGoogle(){

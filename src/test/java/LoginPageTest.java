@@ -1,5 +1,4 @@
 import Core.BaseTest;
-import Core.BaseUITest;
 import Pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
