@@ -32,6 +32,4 @@ public class AutomationRemarksPage {
         $(ContactByEmail1).val(text);
         return this;
     }
-
-
 }
