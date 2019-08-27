@@ -1,5 +1,6 @@
 package Pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
@@ -14,7 +15,9 @@ public class AutomationRemarksPage {
 
     private SelenideElement ContactByEmail1 = $(By.id("email"));
 
-    public AutomationRemarksPage open() {
+    private  SelenideElement AssertTextOnMentoringPage = $(By.cssSelector("#main > div > p"));
+
+    public AutomationRemarksPage openAutomationRemarks() {
         Selenide.open("http://automation-remarks.com/2016/selenide-shadow-sides/index.html");
         return this;
     }
@@ -30,6 +33,11 @@ public class AutomationRemarksPage {
     }
     public AutomationRemarksPage enterEmail(String text) {
         $(ContactByEmail1).setValue(text);
+        return this;
+    }
+
+    public AutomationRemarksPage ValidTextExistsOnMentoringPage (String text){
+        $(AssertTextOnMentoringPage).shouldHave(Condition.text(text));
         return this;
     }
 }

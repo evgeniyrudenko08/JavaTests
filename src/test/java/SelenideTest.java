@@ -9,9 +9,10 @@ public class SelenideTest {
 
     @Test
     public void SelectEducationCourseAndSendInformationByEmail(){
-        automationRemarksPage.open();
+        automationRemarksPage.openAutomationRemarks();
         automationRemarksPage.clickOnEducationButton();
         automationRemarksPage.clickOnMentoring();
+        automationRemarksPage.ValidTextExistsOnMentoringPage("Отличный формат если ты работаешь один в компании и хочешь найти ментора.");
         automationRemarksPage.enterEmail("rev08@gmail.co");
     }
 }
