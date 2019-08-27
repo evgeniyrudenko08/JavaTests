@@ -4,14 +4,14 @@
     <test verbose="2" preserve-order="true" name="Chrome">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="LoginPageTest"/>
+            <class name="SelenideTest"/>
         </classes>
     </test>
 
     <test verbose="2" preserve-order="true" name="Firefox">
         <parameter name="browser" value="ff"/>
         <classes>
-            <class name="LoginPageTest"/>
+            <class name="SelenideTest"/>
         </classes>
     </test>
 </suite>
