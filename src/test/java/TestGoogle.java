@@ -1,21 +1,15 @@
+import Core.BaseTest;
 import Core.Logging;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 
-public class TestGoogle {
+public class TestGoogle extends BaseTest {
 
-    private WebDriver driver;
     Logging logs = new Logging();
 
     @BeforeSuite
@@ -24,21 +18,16 @@ public class TestGoogle {
     }
 
     @Test
-    private void FindCheeseInGoogle() {
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\evgeniy.rudenko\\Downloads\\chromedriver_win32\\chromedriver.exe");
+    public void FindCheeseInGoogle() {
+           //System.setProperty("webdriver.chrome.driver", "C:\\Users\\evgeniy.rudenko\\Downloads\\chromedriver_win32\\chromedriver.exe");
             logs.logger.info("Start driver");
-            driver = new ChromeDriver();
+            //driver = new ChromeDriver();
 
             driver.navigate().to("http://www.google.com");
             WebElement element  = driver.findElement(By.name("q"));
             element.sendKeys("Cheese!");
             element.submit();
             System.out.println("Pages.Page title is: " + driver.getTitle());
-            (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
-                public Boolean apply(WebDriver d) {
-                    return d.getTitle().toLowerCase().startsWith("cheese!");
-                }
-            });
             System.out.println("Pages.Page title is: " + driver.getTitle());
             logs.logger.info("Finish test");
             Assert.assertEquals(driver.getTitle(), "Cheese! - Пошук Google");
@@ -46,9 +35,8 @@ public class TestGoogle {
 
     @Test
     public void FindCheeseInGoogleWithFirefox () {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\evgeniy.rudenko\\Downloads\\geckodriver-v0.24.0-win64\\geckodriver.exe");
-        driver = new FirefoxDriver();
-
+        //System.setProperty("webdriver.gecko.driver", "C:\\Users\\evgeniy.rudenko\\Downloads\\geckodriver-v0.24.0-win64\\geckodriver.exe");
+        //driver = new FirefoxDriver();
         driver.get("http://www.google.com");
 
         // Find the text input element by its name
@@ -65,20 +53,8 @@ public class TestGoogle {
 
         // Google's search is rendered dynamically with JavaScript.
         // Wait for the page to load, timeout after 10 seconds
-        (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver d) {
-                return d.getTitle().toLowerCase().startsWith("cheese!");
-            }
-        });
-
         // Should see: "cheese! - Google Search"
         System.out.println("Pages.Page title is: " + driver.getTitle());
         Assert.assertEquals(driver.getTitle(), "Cheese! - Пошук Google");
-    }
-
-    @AfterMethod
-    public void tearDown()
-    {
-        driver.quit();
     }
 }

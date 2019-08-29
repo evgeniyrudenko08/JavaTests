@@ -8,11 +8,17 @@ public class SelenideTest {
     private AutomationRemarksPage automationRemarksPage = new AutomationRemarksPage();
 
     @Test
-    public void SelectEducationCourseAndSendInformationByEmail(){
+    public void selectEducationCourseAndSendInformationByEmail(){
         automationRemarksPage.openAutomationRemarks();
         automationRemarksPage.clickOnEducationButton();
         automationRemarksPage.clickOnMentoring();
         automationRemarksPage.ValidTextExistsOnMentoringPage("Отличный формат если ты работаешь один в компании и хочешь найти ментора.");
         automationRemarksPage.enterEmail("rev08@gmail.co");
     }
+
+    @Test
+    public void openAutomationRemarks(){
+        automationRemarksPage.openAutomationRemarks();
+    }
+
 }

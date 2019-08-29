@@ -9,13 +9,13 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class AutomationRemarksPage {
 
-    private SelenideElement Mentoring1 = $(By.cssSelector("#main > div > section > article.style6 > a > h2"));
+    private SelenideElement Mentoring = $(By.cssSelector("#main > div > section > article.style6 > a > h2"));
 
     private SelenideElement ButtonEducation = $(By.cssSelector("#nav > div.nav-panel > a.course_link > span"));
 
     private SelenideElement ContactByEmail = $(By.id("email"));
 
-    private  SelenideElement AssertTextOnMentoringPage = $(By.cssSelector("#main > div > p"));
+    private SelenideElement AssertTextOnMentoringPage = $(By.cssSelector("#main > div > p"));
 
     public AutomationRemarksPage openAutomationRemarks() {
         Selenide.open("http://automation-remarks.com/2016/selenide-shadow-sides/index.html");
@@ -23,7 +23,7 @@ public class AutomationRemarksPage {
     }
 
     public AutomationRemarksPage clickOnMentoring() {
-        $(Mentoring1).click();
+        $(Mentoring).click();
         return this;
     }
 
